@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.cdnfonts.com/css/karmatic-arcade"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/arcade" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/quantifier-nbp" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+                
+                
+
+    <script type="module" src="./js/controller.js"></script>
+  </head>
+  <body>
+    <div class="title-screen ">
+      <h1 class="title-screen__heading">Choose your Pokemon </br><span class="secondary-text">...1 of 5</span></h1>
+      <a class="title-screen__btn-start" href="#">Start</a>
+    </div>
+
+    <!-- Form -->
+    <div class="overlay hidden"></div>
+    <div class="choose-pokemon-window hidden">
+      <form class="form ">
+         <!--Unordered list for each quesstion?  -->
+        <h3 class="form-heading">Select Pokemon Type...</h3>
+        <!-- <label>Type</label> -->
+        <div class="type-buttons">
+            <div class="type-button fire" role="button" tabindex="0">
+                <span class="icon">🔥</span>
+                <span class="btn-text">Fire</span>
+            </div>
+            <div class="type-button water" role="button" tabindex="0">
+                <span class="icon">💧</span>
+                <span class="btn-text">Water</span>
+            </div>
+            <div class="type-button electric" role="button" tabindex="0">
+                <span class="icon">⚡</span>
+                <span class="btn-text">Electric</span>
+            </div>
+            <div class="type-button grass" role="button" tabindex="0">
+                <span class="icon">🌱</span>
+                <span class="btn-text">Grass</span>
+            </div>
+            <div class="type-button ice" role="button" tabindex="0">
+                <span class="icon">❄️</span>
+                <span class="btn-text">Ice</span>
+            </div>
+            <div class="type-button fighting" role="button" tabindex="0">
+                <span class="icon">🥊</span>
+                <span class="btn-text">Fighting</span>
+            </div>
+            <div class="type-button poison" role="button" tabindex="0">
+                <span class="icon">☠️</span>
+                <span class="btn-text">Poison</span>
+            </div>
+            <div class="type-button ground" role="button" tabindex="0">
+                <span class="icon">🌍</span>
+                <span class="btn-text">Ground</span>
+            </div>
+            <div class="type-button flying" role="button" tabindex="0">
+                <span class="icon">🕊️</span>
+                <span class="btn-text">Flying</span>
+            </div>
+            <div class="type-button psychic" role="button" tabindex="0">
+                <span class="icon">🔮</span>
+                <span class="btn-text">Psychic</span>
+            </div>
+            <div class="type-button bug" role="button" tabindex="0">
+                <span class="icon">🐛</span>
+                <span class="btn-text">Bug</span>
+            </div>
+            <div class="type-button rock" role="button" tabindex="0">
+                <span class="icon">🪨</span>
+                <span class="btn-text">Rock</span>
+            </div>
+            <div class="type-button ghost" role="button" tabindex="0">
+                <span class="icon">👻</span>
+                <span class="btn-text">Ghost</span>
+            </div>
+            <div class="type-button dragon" role="button" tabindex="0">
+                <span class="icon">🐉</span>
+                <span class="btn-text">Dragon</span>
+            </div>
+            <div class="type-button dark" role="button" tabindex="0">
+                <span class="icon">🌑</span>
+                <span class="btn-text">Dark</span>
+            </div>
+            <div class="type-button steel" role="button" tabindex="0">
+                <span class="icon">🔩</span>
+                <span class="btn-text">Steel</span>
+            </div>
+            <div class="type-button fairy" role="button" tabindex="0">
+                <span class="icon">🧚</span>
+                <span class="btn-text">Fairy</span>
+            </div>
+            <div class="type-button normal" role="button" tabindex="0">
+                <span class="icon">⚪</span>
+                <span class="btn-text">Normal</span>
+            </div>
+        </div>
+
+        
+<!--         
+        <label>Size</label>
+        <select class="size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select> -->
+        <!-- <input class="size" type="text" /> -->
+
+        
+      </form>
+    </div>
+
+    <!-- Pokemon cards based on type -->
+    <div class="hp__card-container  hidden">
+        <ul class="hp__card-list">
+          <!-- <li class="hp__card-item">
+            <div class="hp__card">
+              <h3 class="hp__card-title">Pikachu</h3>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" class="hp__card-image" />
+              <p class="hp__card-type">Electric</p>
+            </div>
+          </li>
+          <li class="hp__card-item">
+            <div class="hp__card">
+              <h3 class="hp__card-title">Charmander</h3>
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" class="hp__card-image" />
+              <p class="hp__card-type">Fire</p>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+      
+  </body>
+</html>

@@ -1,0 +1,305 @@
+:root {
+  --color-yellow: #f7d02c;
+  --color-blue: #3b4cca;
+  --color-blue-lighter: #3d7dca;
+  --color-red-light: #ff0000;
+  /* Pokémon type colors */
+  --normal: #a8a77a;
+  --fire: #ee8130;
+  --water: #6390f0;
+  --electric: #f7d02c;
+  --grass: #7ac74c;
+  --ice: #96d9d6;
+  --fighting: #c22e28;
+  --poison: #a33ea1;
+  --ground: #e2bf65;
+  --flying: #a98ff3;
+  --psychic: #f95587;
+  --bug: #a6b91a;
+  --rock: #b6a136;
+  --ghost: #735797;
+  --dragon: #6f35fc;
+  --dark: #705746;
+  --steel: #b7b7ce;
+  --fairy: #d685ad;
+
+  /* Text */
+  --text-pokemon: "Pokemon Solid";
+  --text-arcade: "Arcade Normal";
+  --text-quantifier: "Quantifier NBP";
+  --text-fugaz: "Fugaz One";
+}
+
+/* Reset basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h3 {
+  color: #000;
+}
+
+label {
+  color: #000;
+  font-size: 2rem;
+}
+
+.secondary-text {
+  font-size: 2.5rem;
+}
+
+/* Title screen container */
+.title-screen {
+  text-align: center;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+/* Heading styled to look like Pokémon logo font */
+.title-screen__heading {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  text-shadow: 4px 4px 0px var(--color-blue);
+  font-family: var(--text-arcade), sans-serif;
+  /* font-family: "Arcade Interlaced", sans-serif; */
+  /* font-family: "Arcade Rounded", sans-serif; */
+
+  margin-bottom: 2rem;
+}
+
+/* Start button styling */
+.title-screen__btn-start {
+  display: inline-block;
+  font-family: var(--text-arcade), sans-serif;
+  /* font-family: "Karmatic Arcade", sans-serif; */
+  padding: 1rem 2.5rem;
+  background-color: var(--color-blue-lighter); /* Pokémon blue */
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 0px #ffcb05;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* Hover and active states for the start button */
+.title-screen__btn-start:hover {
+  background-color: #316aa2;
+  transform: translateY(-2px);
+}
+
+.title-screen__btn-start:active {
+  background-color: #2b5d91;
+  box-shadow: 0px 2px 0px #ffcb05;
+  transform: translateY(0px);
+}
+
+/* Form */
+/* Overall Window Styling */
+.choose-pokemon-window {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 5px solid var(--color-yellow);
+  border-radius: 10px;
+  padding: 40px 90px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading Styling */
+.form-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-yellow);
+  margin-bottom: 1rem; /* Space below the heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family: var(--text-fugaz);
+}
+
+/* Button Grid */
+.type-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 1.2rem;
+}
+
+/* Button Styles */
+.type-button {
+  padding: 1rem; /* Reduced padding for better size */
+  opacity: 1;
+  border-radius: 10px; /* Rounded corners */
+  height: 3rem;
+  transition: all 0.3s ease;
+  display: flex; /* Flexbox for centering */
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For pseudo-elements */
+  font-family: var(--text-fugaz);
+}
+
+/* Icon and Text Styles */
+.icon {
+  margin-right: 0.5rem; /* Space between icon and text */
+  font-size: 1.5rem; /* Larger icon */
+}
+
+.btn-text {
+  font-weight: 600;
+  font-size: 1.2rem; /* Increased font size for readability */
+  color: #fff; /* Button text color */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Effects */
+.type-button:hover {
+  opacity: 0.8; /* Change opacity on hover */
+  transform: scale(1.05); /* Slight scale effect */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0 0 15px var(--color-yellow); /* Glow effect */
+}
+
+/* Specific Colors for Each Type */
+.type-button.normal {
+  background-color: var(--normal);
+}
+.type-button.fire {
+  background-color: var(--fire);
+}
+.type-button.water {
+  background-color: var(--water);
+}
+.type-button.electric {
+  background-color: var(--electric);
+}
+.type-button.grass {
+  background-color: var(--grass);
+}
+.type-button.ice {
+  background-color: var(--ice);
+}
+.type-button.fighting {
+  background-color: var(--fighting);
+}
+.type-button.poison {
+  background-color: var(--poison);
+}
+.type-button.ground {
+  background-color: var(--ground);
+}
+.type-button.flying {
+  background-color: var(--flying);
+}
+.type-button.psychic {
+  background-color: var(--psychic);
+}
+.type-button.bug {
+  background-color: var(--bug);
+}
+.type-button.rock {
+  background-color: var(--rock);
+}
+.type-button.ghost {
+  background-color: var(--ghost);
+}
+.type-button.dragon {
+  background-color: var(--dragon);
+}
+.type-button.dark {
+  background-color: var(--dark);
+}
+.type-button.steel {
+  background-color: var(--steel);
+}
+.type-button.fairy {
+  background-color: var(--fairy);
+}
+
+/* Card */
+
+.hp__card-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: scroll;
+  padding: 1rem;
+  gap: 1.5rem;
+  background-color: #f0f4f7;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hp__card-list {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure cards are in a single line */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hp__card-item {
+  flex: 0 0 auto; /* Cards do not shrink, and their size is based on content */
+}
+
+.hp__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 10rem;
+  height: 14rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.hp__card:hover {
+  transform: scale(1.05);
+}
+
+.hp__card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #394936;
+  margin-bottom: 0.5rem;
+}
+
+.hp__card-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+.hp__card-type {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a6c6e9;
+}
+
+/* Bottom */
+.hidden {
+  display: none;
+}
