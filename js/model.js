@@ -39,12 +39,12 @@ export const fetchType = async function (url, type) {
   });
 };
 
-export const selectPokemon = function (pokemon) {
+export const addPokemon = function (pokemon) {
   const index = state.pokemon.findIndex((pok) => pok.name === pokemon);
   state.deck.push(state.pokemon[index]);
 };
 
-export const clearPokemon = function () {
+export const clearPokemonSelection = function () {
   state.cards.splice(0, state.pokemon.length);
 
   console.log(state);

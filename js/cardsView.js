@@ -24,6 +24,11 @@ class CardsView extends View {
     return markup;
   }
 
+  hideFormShowCards() {
+    this.hideForm();
+    this._parentEl.classList.remove("hidden");
+  }
+
   addHandlerCardSelect(handler) {
     this._parentEl.addEventListener("click", function (e) {
       const card = e.target.closest(".hp__card-item");

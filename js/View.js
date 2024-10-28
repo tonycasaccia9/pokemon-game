@@ -6,13 +6,22 @@ export default class View {
   cardsContainer = document.querySelector(".hp__card-container");
   deckContainer = document.querySelector(".hp__deck-container");
 
-  render(data) {
+  render(data, deck = false) {
     this._data = data;
-    this.hideForm();
     const markup = this._generateMarkup();
     this._parentEl.innerHTML = "";
-    this._parentEl.classList.remove("hidden");
+    if (deck) {
+      this.showParent();
+      this.titleScreen.classList.remove("hidden");
+    }
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  showParent() {
+    this._parentEl.classList.remove("hidden");
+  }
+  hideParent() {
+    this._parentEl.classList.add("hidden");
   }
 
   toggleForm = function () {
@@ -26,20 +35,4 @@ export default class View {
     this.titleScreen.classList.add("hidden");
     this.formWindow.classList.add("hidden");
   };
-
-  returnToMenu(deck) {
-    // Hide the card selection screen
-    this.cardsContainer.classList.add("hidden");
-
-    // Clear the previous deck before adding new Pokémon
-    this.deckContainer.innerHTML = "";
-
-    // Show the title screen and deck
-    this.deckContainer.classList.remove("hidden");
-    this.titleScreen.classList.toggle("hidden");
-
-    // Generate and insert the new deck's markup
-    const markup = this._generateMarkup(deck);
-    this.deckContainer.insertAdjacentHTML("beforeend", markup);
-  }
 }
