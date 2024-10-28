@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import cardsView from "./cardsView.js";
 import View from "./View.js";
+import deckView from "./deckView.js";
 
 // Elements
 const formWindow = document.querySelector(".choose-pokemon-window");
@@ -12,12 +13,20 @@ const cardsContainer = document.querySelector(".hp__card-container");
 
 // Controllers
 const controlQuestion = async function (type) {
-  console.log(type);
   // Change state
   await model.fetchType(model.URL, type);
-  console.log(model.state);
   // Render cards using new state data
-  cardsView.renderCards(model.state);
+  cardsView.render(model.state);
+};
+
+const controlAddPokemon = function (pokemon) {
+  // Clear pokemon options field
+  model.clearPokemon();
+  // Add selected pokemon to deck
+  model.selectPokemon(pokemon);
+  console.log(model.state);
+  // render selected cards under title
+  deckView.returnToMenu(model.state.deck);
 };
 
 // Event Listeners
@@ -35,3 +44,8 @@ formWindow.addEventListener("click", function (e) {
 
   controlQuestion(btn.querySelector(".btn-text").textContent);
 });
+
+const init = function () {
+  cardsView.addHandlerCardSelect(controlAddPokemon);
+};
+init();

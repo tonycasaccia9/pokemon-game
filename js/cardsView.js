@@ -3,20 +3,9 @@ import View from "./View.js";
 class CardsView extends View {
   _parentEl = document.querySelector(".hp__card-container");
 
-  renderCards = function (data) {
-    this._data = data;
-    this.hideForm();
-    const markup = this._generateMarkup();
-    this._parentEl.innerHTML = "";
-    this._parentEl.classList.remove("hidden");
-    this._parentEl.insertAdjacentHTML("afterbegin", markup);
-  };
-
   _generateMarkup() {
-    console.log(this._data);
-    const markup = this._data.pokemon
+    const markup = this._data.cards
       .map((pok) => {
-        console.log(pok);
         return `
     <li class="hp__card-item">
       <div class="hp__card">
@@ -32,8 +21,18 @@ class CardsView extends View {
       })
       .join("");
 
-    console.log(markup);
     return markup;
+  }
+
+  addHandlerCardSelect(handler) {
+    this._parentEl.addEventListener("click", function (e) {
+      const card = e.target.closest(".hp__card-item");
+      if (!card) return;
+      const pokemon = card
+        .querySelector(".hp__card-title")
+        .textContent.toLowerCase();
+      handler(pokemon);
+    });
   }
 }
 export default new CardsView();

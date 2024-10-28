@@ -23,6 +23,7 @@
     <script type="module" src="./js/controller.js"></script>
   </head>
   <body>
+    <div class="home-screen-container">
     <div class="title-screen ">
       <h1 class="title-screen__heading">Choose your Pokemon </br><span class="secondary-text">...1 of 5</span></h1>
       <a class="title-screen__btn-start" href="#">Start</a>
@@ -124,10 +125,13 @@
       </form>
     </div>
 
+    <div class="hp__deck-container hidden"></div>
+
+  </div>
     <!-- Pokemon cards based on type -->
-    <div class="hp__card-container  hidden">
+    <div class="hp__card-container hidden">
         <ul class="hp__card-list">
-          <!-- <li class="hp__card-item">
+          <li class="hp__card-item">
             <div class="hp__card">
               <h3 class="hp__card-title">Pikachu</h3>
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" class="hp__card-image" />
@@ -140,9 +144,10 @@
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" class="hp__card-image" />
               <p class="hp__card-type">Fire</p>
             </div>
-          </li> -->
+          </li>
         </ul>
-      </div>
-      
+    </div>
+
+
   </body>
 </html>
