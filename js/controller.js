@@ -34,6 +34,7 @@ const controlAddPokemon = function (pokemon) {
   console.log(model.state);
 
   // Increase number by 1
+  if (model.state.deck.length > 4) titleView.render(model.state.deck);
   numberView.render(model.state.deck);
 
   // render selected cards under title
