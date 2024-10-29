@@ -9,7 +9,7 @@ export const URL = `https://pokeapi.co/api/v2/pokemon/`;
 
 export const fetchPokemon = async function () {
   try {
-    const resPokemon = await fetch(`${URL}?limit=150`);
+    const resPokemon = await fetch(`${URL}?limit=350`);
     const dataPokemon = await resPokemon.json();
 
     const pokeArr = await Promise.all(
@@ -48,4 +48,8 @@ export const clearPokemonSelection = function () {
   state.cards.splice(0, state.pokemon.length);
 
   console.log(state);
+};
+
+export const clearDeck = function () {
+  state.deck.splice(0, state.deck.length);
 };

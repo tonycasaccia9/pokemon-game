@@ -62,12 +62,17 @@ label {
 }
 
 /* Title screen container */
+/* .title-screen:nth-child(1) {
+  gap: 20px;
+} */
 .title-screen {
+  transform: translateY(-200px);
   text-align: center;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   background-color: #000;
@@ -80,7 +85,7 @@ label {
   align-items: center;
 }
 .title__img {
-  max-height: 300px;
+  max-width: 300px;
 }
 .pokeball {
   max-height: 90px;
@@ -117,6 +122,7 @@ label {
   padding: 20px; /* Add padding if necessary */
 
   margin-top: 3rem;
+  transform: translateY(-200px);
 }
 
 .hp__deck-container::-webkit-scrollbar {
@@ -133,6 +139,7 @@ label {
 }
 
 .title-screen__btn-start {
+  margin-top: 40px;
   display: inline-block;
   font-family: var(--text-arcade), sans-serif;
   /* font-family: "Karmatic Arcade", sans-serif; */
@@ -348,6 +355,15 @@ label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #a6c6e9;
+}
+
+/* Copyright */
+
+.copyright {
+  position: fixed;
+
+  left: 10px;
+  bottom: 10px;
 }
 
 /* Bottom */

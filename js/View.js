@@ -15,6 +15,15 @@ export default class View {
       this.titleScreen.classList.remove("hidden");
     }
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
+    if (this._parentEl === document.querySelector(".hp__card-container"))
+      this._parentEl.scrollLeft = 0;
+  }
+
+  reset(data) {
+    this._data = data;
+    const markup = this._generateMarkupReset();
+    this._parentEl.innerHTML = "";
+    this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
   showParent() {
@@ -22,6 +31,10 @@ export default class View {
   }
   hideParent() {
     this._parentEl.classList.add("hidden");
+  }
+
+  adjustPos() {
+    this._parentEl.style.transform = "translateY(-50px)";
   }
 
   toggleForm = function () {

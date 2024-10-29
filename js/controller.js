@@ -29,13 +29,17 @@ const controlAddPokemon = function (pokemon) {
   // Clear pokemon options field so new types can be rendered
   model.clearPokemonSelection();
 
+  // title screen adjustment
+  titleView.adjustPos();
+  deckView.adjustPos();
+
   // Add selected pokemon to deck
   model.addPokemon(pokemon);
   console.log(model.state);
 
   // Increase number by 1
   if (model.state.deck.length > 4) titleView.render(model.state.deck);
-  numberView.render(model.state.deck);
+  else numberView.render(model.state.deck);
 
   // render selected cards under title
   cardsView.hideParent();
@@ -47,6 +51,14 @@ titleScreen.addEventListener("click", function (e) {
   e.preventDefault();
   const btn = e.target.closest(".title-screen__btn-start");
   if (!btn) return;
+  if (model.state.deck.length === 5) {
+    model.clearPokemonSelection();
+    model.clearDeck();
+    deckView.render(model.state.deck);
+    deckView.hideParent();
+    titleView.reset(model.state.deck);
+    return;
+  }
   formView.showParent();
   titleView.hideParent();
   if (model.state.deck.length > 0) deckView.hideParent();
@@ -71,8 +83,11 @@ init();
 1. Number changes with each pokemon chosen (1, 2, 3, 4, 5) ✅
 
 2. Export hiding functionality out of universal render() method ✅
-2. Refactor View.returnToMenu(deck) to fit in with View.render
+2. Refactor View.returnToMenu(deck) to fit in with View.render✅
 
 3. Change container styling for cards and deck
+
+4. Play again functionality
+
 
 */

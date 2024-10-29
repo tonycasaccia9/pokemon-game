@@ -17,6 +17,18 @@ class titleView extends View {
 
     return markup;
   }
+
+  _generateMarkupReset() {
+    return `
+  <div class="title__img-container">
+    <img src="/img/pokemon-logo.png" class="title__img"/>
+    <img src="/img/pokeball.png" class="title__img pokeball"/>
+  </div>
+  <h1 class="title-screen__heading">Choose your Pokemon </br>
+    <span class="secondary-text">...0 of 5</span></h1>
+  <a class="title-screen__btn-start" href="#">Start</a>
+  `;
+  }
 }
 
 export default new titleView();
