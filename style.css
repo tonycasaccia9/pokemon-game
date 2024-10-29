@@ -54,11 +54,11 @@ h3 {
 
 label {
   color: #000;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Scaled down */
 }
 
 .secondary-text {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Scaled down */
 }
 
 /* Title screen container */
@@ -76,24 +76,24 @@ label {
   justify-content: center;
   align-items: center;
   background-color: #000;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .title__img-container {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
 }
 .title__img {
-  max-width: 300px;
+  max-width: 250px;
 }
 .pokeball {
-  max-height: 90px;
+  max-height: 70px;
 }
 
 /* Heading styled to look like Pokémon logo font */
 .title-screen__heading {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-yellow);
@@ -102,7 +102,7 @@ label {
   /* font-family: "Arcade Interlaced", sans-serif; */
   /* font-family: "Arcade Rounded", sans-serif; */
 
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Deck */
@@ -112,16 +112,16 @@ label {
   justify-content: flex-start;
   align-items: center;
   overflow-x: scroll;
-  padding: 1rem;
-  gap: 1.5rem;
+  padding: 0.5rem;
+  gap: 1rem;
   background-color: #f0f4f7;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  max-width: 1000px;
+  max-width: 800px;
   padding: 20px; /* Add padding if necessary */
 
-  margin-top: 3rem;
+  margin-top: 2rem;
   transform: translateY(-200px);
 }
 
@@ -135,21 +135,21 @@ label {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center align horizontally */
-  gap: 20px; /* Adds space between the title screen and deck container */
+  gap: 15px; /* Adds space between the title screen and deck container */
 }
 
 .title-screen__btn-start {
-  margin-top: 40px;
+  margin-top: 30px;
   display: inline-block;
   font-family: var(--text-arcade), sans-serif;
   /* font-family: "Karmatic Arcade", sans-serif; */
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   background-color: var(--color-blue-lighter); /* Pokémon blue */
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
   border-radius: 5px;
-  box-shadow: 0px 4px 0px #ffcb05;
+  box-shadow: 0px 3px 0px #ffcb05;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 /* Hover and active states for the start button */
