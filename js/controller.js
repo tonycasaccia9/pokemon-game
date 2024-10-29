@@ -59,10 +59,12 @@ titleScreen.addEventListener("click", function (e) {
     deckView.hideParent();
     titleView.reset(model.state.deck);
     return;
+  } else {
+    formView.render();
+    formView.showParent();
+    titleView.hideParent();
+    if (model.state.deck.length > 0) deckView.hideParent();
   }
-  formView.showParent();
-  titleView.hideParent();
-  if (model.state.deck.length > 0) deckView.hideParent();
 });
 
 formWindow.addEventListener("click", function (e) {

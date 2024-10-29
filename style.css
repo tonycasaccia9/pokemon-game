@@ -167,8 +167,8 @@ label {
 /* Form */
 /* Overall Window Styling */
 .choose-pokemon-window {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 5px solid var(--color-yellow);
+  background-color: #f0f4f7;
+  /* border: 5px solid var(--color-blue); */
   border-radius: 10px;
   padding: 40px 90px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
@@ -367,24 +367,47 @@ label {
 }
 
 /* Spinner */
-
-.spinner {
-  margin: 5rem auto;
-  text-align: center;
-
-  svg {
-    height: 6rem;
-    width: 6rem;
-    fill: black;
-    animation: rotate 2s infinite linear;
-  }
+.loading-text {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  position: relative; /* Position to create absolute dots */
+  color: var(--color-blue);
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Add a semi-transparent background */
+  border-radius: 0.5rem; /* Optional: Add border radius for aesthetics */
+  padding: 1rem; /* Add some padding */
+}
+
+.spinner-icon {
+  width: 2rem; /* Adjust size of the spinner icon */
+  height: 2rem; /* Adjust size of the spinner icon */
+
+  fill: #394936; /* Set a specific color for visibility */
+  animation: rotate 2s infinite linear;
+  z-index: 1000;
+}
+
+.loading-text {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-family: var(--text-arcade);
+}
+
+/* Rotate animation for the spinner */
 @keyframes rotate {
   0% {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }

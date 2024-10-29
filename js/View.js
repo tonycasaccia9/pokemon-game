@@ -1,5 +1,3 @@
-import icons from "../img/icons.svg";
-
 export default class View {
   _data;
   formWindow = document.querySelector(".choose-pokemon-window");
@@ -31,11 +29,10 @@ export default class View {
   renderSpinner() {
     console.log("spinner");
     const markup = `
-    <div class="spinner">
-      <svg>
-        <use href="${icons}.svg#icon-loader"></use>
-      </svg>
-    </div> `;
+    <div class="">
+     
+      <span class="loading-text">Loading...</span>
+    </div>`;
     this._parentEl.innerHTML = "";
 
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
