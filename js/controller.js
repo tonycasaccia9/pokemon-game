@@ -16,6 +16,7 @@ const cardsContainer = document.querySelector(".hp__card-container");
 
 // Controllers
 const controlSelectType = async function (type) {
+  formView.renderSpinner();
   // Change state
   await model.fetchType(model.URL, type);
 

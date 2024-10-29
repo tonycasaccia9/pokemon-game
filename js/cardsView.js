@@ -33,10 +33,17 @@ class CardsView extends View {
     this._parentEl.addEventListener("click", function (e) {
       const card = e.target.closest(".hp__card-item");
       if (!card) return;
-      const pokemon = card
+      const pokemonName = card
         .querySelector(".hp__card-title")
         .textContent.toLowerCase();
-      handler(pokemon);
+
+      const cryUrl = `https://play.pokemonshowdown.com/audio/cries/${pokemonName}.mp3`;
+      const cryAudio = new Audio(cryUrl);
+      // cryAudio
+      //   .play()
+      //   .catch((error) => console.error("Cry not available for:", pokemonName));
+
+      handler(pokemonName);
     });
   }
 }
