@@ -11,7 +11,7 @@ class titleView extends View {
         <img src="/img/pokeball.png" class="title__img pokeball"/>
       </div>
     <h1 class="title-screen__heading">Congrats! You are Ready for Battle! </br>
-        <span class="secondary-text">5 of 5 Pokemon Ready</span>
+        <span class="secondary-text">6 of 6 Pokemon Ready</span>
     </h1>
     <a class="title-screen__btn-start" href="#">Play again</a>`;
 
@@ -25,7 +25,7 @@ class titleView extends View {
     <img src="/img/pokeball.png" class="title__img pokeball"/>
   </div>
   <h1 class="title-screen__heading">Choose your Pokemon </br>
-    <span class="secondary-text">...0 of 5</span></h1>
+    <span class="secondary-text">...0 of 6</span></h1>
   <a class="title-screen__btn-start" href="#">Start</a>
   `;
   }

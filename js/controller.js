@@ -39,7 +39,8 @@ const controlAddPokemon = function (pokemon) {
   console.log(model.state);
 
   // Increase number by 1
-  if (model.state.deck.length > 4) titleView.render(model.state.deck);
+  if (model.state.deck.length > model.DECK_LENGTH - 1)
+    titleView.render(model.state.deck);
   else numberView.render(model.state.deck);
 
   // render selected cards under title
@@ -52,7 +53,8 @@ titleScreen.addEventListener("click", function (e) {
   e.preventDefault();
   const btn = e.target.closest(".title-screen__btn-start");
   if (!btn) return;
-  if (model.state.deck.length === 5) {
+  if (model.state.deck.length === model.DECK_LENGTH) {
+    console.log(model.DECK_LENGTH);
     model.clearPokemonSelection();
     model.clearDeck();
     deckView.render(model.state.deck);

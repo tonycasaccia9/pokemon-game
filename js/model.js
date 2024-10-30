@@ -6,6 +6,7 @@ export const state = {
 };
 
 export const URL = `https://pokeapi.co/api/v2/pokemon/`;
+export const DECK_LENGTH = 6;
 
 export const fetchPokemon = async function () {
   try {

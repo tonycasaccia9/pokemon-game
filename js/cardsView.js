@@ -4,9 +4,12 @@ class CardsView extends View {
   _parentEl = document.querySelector(".hp__card-container");
 
   _generateMarkup() {
-    const markup = this._data.cards
-      .map((pok) => {
-        return `
+    const markup =
+      `<ul class="hp__card-list">` +
+      this._data.cards
+        .map((pok) => {
+          return `
+  
     <li class="hp__card-item">
       <div class="hp__card">
         <h3 class="hp__card-title">${
@@ -18,8 +21,9 @@ class CardsView extends View {
         <p class="hp__card-type">${this._data.type}</p>
       </div>
     </li> `;
-      })
-      .join("");
+        })
+        .join("") +
+      `</ul>`;
 
     return markup;
   }

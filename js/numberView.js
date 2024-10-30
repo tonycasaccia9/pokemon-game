@@ -6,8 +6,8 @@ class NumberView extends View {
   _generateMarkup() {
     console.log(this._data.length);
     const markup = `...${
-      this._data.length <= 5 ? this._data.length : 5
-    } out of 5`;
+      this._data.length <= 6 ? this._data.length : 6
+    } out of 6`;
 
     return markup;
   }
