@@ -59,7 +59,7 @@ label {
 }
 
 .secondary-text {
-  font-size: 2rem; /* Scaled down */
+  font-size: 1.6rem; /* Scaled down */
 }
 
 /* Title screen container */
@@ -85,16 +85,18 @@ label {
   gap: 20px;
   align-items: center;
 }
-.title__img {
-  max-width: 250px;
-}
 .pokeball {
-  max-height: 70px;
+  max-width: 42px;
+  margin-bottom: 0.2rem;
 }
 
+.logo {
+  height: 180px;
+  max-width: 200px; /* Ensure logo size is appropriate */
+}
 /* Heading styled to look like Pokémon logo font */
 .title-screen__heading {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-yellow);
@@ -106,18 +108,49 @@ label {
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+  .title-screen {
+    transform: translateY(
+      0
+    ); /* Reset the Y-translation to bring the element into view */
+    padding: 1rem; /* Add padding for better spacing */
+    height: auto; /* Ensure height can adjust to content */
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds viewport */
+    margin-bottom: 1rem;
+  }
+
   .title-screen__heading {
     max-width: 90%; /* Control the maximum width to avoid edges */
-    margin: 0 auto; /* Center the heading */
-    font-size: 2rem;
+    margin: 1rem auto; /* Center the heading */
+    font-size: 1.4rem; /* Responsive font size */
+    padding: 0.5rem; /* Add padding for breathing room */
+    text-align: center; /* Center the text */
   }
+
+  .secondary-text {
+    font-size: 1rem; /* Ensure secondary text remains legible */
+  }
+
   .pokeball {
-    /* display: none; */
-    max-width: 50px;
+    max-width: 30px;
+    margin-bottom: 0.2rem;
   }
+
   .logo {
-    max-width: 200px;
+    display: none;
+    height: 100px;
+    max-width: 200px; /* Ensure logo size is appropriate */
+  }
+  .title-screen .title-screen__btn-start {
+    margin-top: 20px;
+    padding: 0.4rem 1rem;
+    background-color: var(--color-blue-lighter); /* Pokémon blue */
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 3px 0px #ffcb05;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 }
 
@@ -135,7 +168,7 @@ label {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   padding: 20px; /* Add padding if necessary */
-
+  max-width: 800px;
   margin-top: 2rem;
   transform: translateY(-200px);
 }
@@ -183,21 +216,20 @@ label {
 /* Overall Window Styling */
 .choose-pokemon-window {
   background-color: #f0f4f7;
-  /* border: 5px solid var(--color-blue); */
   border-radius: 10px;
-  padding: 40px 90px;
+  padding: 28px 63px; /* 30% reduction in padding */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  max-width: 1000px;
+  max-width: 700px; /* Reduced max-width by 30% */
   margin: auto;
   text-align: center;
 }
 
 /* Heading Styling */
 .form-heading {
-  font-size: 2rem;
+  font-size: 1.4rem; /* 30% reduction in font size */
   font-weight: bold;
   color: var(--color-yellow);
-  margin-bottom: 1rem; /* Space below the heading */
+  margin-bottom: 0.7rem; /* Space below the heading */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   font-family: var(--text-fugaz);
 }
@@ -206,33 +238,32 @@ label {
 .type-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 1.2rem;
+  column-gap: 1rem; /* Slightly reduced gap */
+  row-gap: 0.84rem; /* Slightly reduced gap */
 }
 
 /* Button Styles */
 .type-button {
-  padding: 1rem; /* Reduced padding for better size */
+  padding: 0.7rem; /* Reduced padding for better size */
   opacity: 1;
   border-radius: 10px; /* Rounded corners */
-  height: 3rem;
+  height: 2.1rem; /* Reduced height */
   transition: all 0.3s ease;
   display: flex; /* Flexbox for centering */
   justify-content: center;
   align-items: center;
   position: relative; /* For pseudo-elements */
-  /* font-family: var(--text-fugaz); */
 }
 
 /* Icon and Text Styles */
 .icon {
-  margin-right: 0.5rem; /* Space between icon and text */
-  font-size: 1.5rem; /* Larger icon */
+  margin-right: 0.35rem; /* Space between icon and text */
+  font-size: 1.05rem; /* Reduced icon size */
 }
 
 .btn-text {
   font-weight: 600;
-  font-size: 1.2rem; /* Increased font size for readability */
+  font-size: 0.84rem; /* Reduced font size for button text */
   color: #fff; /* Button text color */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
@@ -310,7 +341,7 @@ label {
   background-color: #f0f4f7;
   border-radius: 0.8rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
+  max-width: 800px;
 
   margin-top: 3rem;
 }
@@ -327,42 +358,6 @@ label {
   gap: 10px;
 }
 
-@media (max-width: 1000px) {
-  .hp__card-container {
-    margin-top: 1rem; /* Reduced margin */
-    overflow-y: auto; /* Allow vertical scrolling */
-    max-height: 80vh; /* Control height */
-    transform: scale(0.9);
-    padding: 0.8rem;
-  }
-
-  .hp__card-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-    gap: 10px;
-  }
-
-  .hp__deck-container {
-    margin-top: 1rem; /* Reduced margin */
-    overflow-y: auto; /* Allow vertical scrolling */
-    max-height: 80vh; /* Control height */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-    gap: 4px;
-    transform: scale(0.9);
-    padding: 0.8rem;
-  }
-  .hp__card-item {
-    list-style: none; /* Ensures no bullet point on individual items */
-    transform: scale(0.9);
-  }
-  .hp__card {
-    padding: 0.8rem;
-  }
-}
-
 .hp__card-item {
   flex: 0 0 auto; /* Cards do not shrink, and their size is based on content */
   list-style: none; /* Ensures no bullet point on individual items */
@@ -376,8 +371,8 @@ label {
   background-color: white;
   border-radius: 1rem;
   padding: 1rem;
-  width: 10rem;
-  height: 14rem;
+  width: 9rem;
+  height: 12rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   text-align: center;
@@ -404,6 +399,87 @@ label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #a6c6e9;
+}
+
+@media (max-width: 800px) {
+  .hp__card-container {
+    margin-top: 1rem; /* Reduced margin */
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: 80vh; /* Control height */
+    transform: scale(0.9);
+    padding: 0.2rem;
+  }
+
+  .hp__card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    gap: 10px;
+  }
+
+  .hp__deck-container {
+    margin-top: 0;
+    max-width: 200px;
+    overflow-x: auto; /* Allow vertical scrolling */
+    max-height: 80vh; /* Control height */
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* column-gap: 1rem; */
+    gap: 4px;
+    transform: scale(0.9);
+    padding: 0.2rem;
+  }
+
+  .hp__deck-container::-webkit-scrollbar {
+    display: flex;
+  }
+
+  .hp__deck-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .hp__deck-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Round the track corners */
+  }
+
+  .hp__deck-container::-webkit-scrollbar-thumb {
+    /* background: var(--color-yellow);  */
+    border-radius: 10px;
+    border: 2px solid rgba(171, 171, 171, 0.2);
+  }
+
+  .hp__deck-container::-webkit-scrollbar-thumb:hover {
+    /* background: var(--color-blue); */
+  }
+  .hp__card-item {
+    list-style: none; /* Ensures no bullet point on individual items */
+    transform: scale(0.9);
+  }
+  .hp__card {
+    width: 6rem;
+    height: 8.4rem;
+    padding: 0.4rem;
+  }
+
+  .hp__card-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #394936;
+    margin-bottom: 0.5rem;
+  }
+
+  .hp__card-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a6c6e9;
+  }
+
+  .hp__card-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+  }
 }
 
 /* Copyright */
@@ -448,7 +524,7 @@ label {
 }
 
 .loading-text {
-  font-size: 1.5rem; /* Adjust font size as needed */
+  font-size: 1rem; /* Adjust font size as needed */
   font-family: var(--text-arcade);
 }
 

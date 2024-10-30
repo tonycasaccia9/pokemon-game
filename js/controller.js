@@ -11,7 +11,7 @@ const formWindow = document.querySelector(".choose-pokemon-window");
 const titleScreen = document.querySelector(".title-screen");
 const typeBtnsContainer = document.querySelector(".type-buttons");
 const cardsContainer = document.querySelector(".hp__card-container");
-
+const copyright = document.querySelector(".copyright");
 // Event Handler Functions
 
 // Controllers
@@ -53,6 +53,7 @@ titleScreen.addEventListener("click", function (e) {
   e.preventDefault();
   const btn = e.target.closest(".title-screen__btn-start");
   if (!btn) return;
+  copyright.style.display = "none";
   if (model.state.deck.length === model.DECK_LENGTH) {
     console.log(model.DECK_LENGTH);
     model.clearPokemonSelection();
