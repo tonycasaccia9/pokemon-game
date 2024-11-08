@@ -10,7 +10,7 @@ export const DECK_LENGTH = 6;
 
 export const fetchPokemon = async function () {
   try {
-    const resPokemon = await fetch(`${URL}?limit=350`);
+    const resPokemon = await fetch(`${URL}?limit=200`);
     const dataPokemon = await resPokemon.json();
 
     const pokeArr = await Promise.all(
