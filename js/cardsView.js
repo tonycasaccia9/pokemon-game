@@ -1,11 +1,14 @@
 import View from "./View.js";
 
 class CardsView extends View {
-  _parentEl = document.querySelector(".hp__card-container");
+  _parentEl = document.querySelector(".cards");
 
   _generateMarkup() {
     const markup =
-      `<ul class="hp__card-list">` +
+      `<h3 class="cards-heading">Select Pokemon </h3>
+      <h4 class="cards-subheading">Scroll -></h4>
+      <div class="hp__card-container ">
+      <ul class="hp__card-list">` +
       this._data.cards
         .map((pok) => {
           return `
@@ -23,7 +26,8 @@ class CardsView extends View {
     </li> `;
         })
         .join("") +
-      `</ul>`;
+      `</ul>
+      </div>`;
 
     return markup;
   }

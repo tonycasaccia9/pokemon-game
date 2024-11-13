@@ -1,0 +1,164 @@
+@media (max-width: 800px) {
+  body .title-screen {
+    margin-top: 5rem;
+    padding: 1rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  body .title-screen__heading {
+    max-width: 90%;
+    margin: 1rem auto;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  body .secondary-text {
+    font-size: 1rem; /* Ensure secondary text remains legible */
+  }
+
+  body .pokeball {
+    max-width: 30px;
+    margin-bottom: 0.2rem;
+  }
+
+  body .logo {
+    display: none;
+    height: 100px;
+    max-width: 200px; /* Ensure logo size is appropriate */
+  }
+  body .title-screen .title-screen__btn-start {
+    margin-top: 20px;
+    padding: 0.4rem 1rem;
+    background-color: var(--color-blue-lighter); /* Pokémon blue */
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 3px 0px #ffcb05;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  body .choose-pokemon-window {
+    transform: scale(0.9);
+  }
+
+  body .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body .cards-heading {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  body .cards-subheading {
+    display: none;
+    height: 0;
+  }
+
+  body .hp__card-container {
+    margin-top: 1rem; /* Reduced margin */
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: 80vh; /* Control height */
+    transform: scale(0.9);
+    padding: 0.2rem;
+    max-height: 400px;
+  }
+
+  body .hp__card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    gap: 10px;
+  }
+
+  body .hp__deck-container {
+    margin-top: 0;
+    max-width: auto;
+    overflow-y: auto;
+    max-height: 20rem;
+    display: grid;
+    /* height: 18rem; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    transform: scale(0.9);
+    padding: 0.2rem;
+  }
+
+  body .hp__deck-container::-webkit-scrollbar {
+    display: flex;
+  }
+
+  body .hp__deck-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  body .hp__deck-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Round the track corners */
+  }
+
+  body .hp__deck-container::-webkit-scrollbar-thumb {
+    /* background: var(--color-yellow);  */
+    border-radius: 10px;
+    border: 2px solid rgba(171, 171, 171, 0.2);
+  }
+
+  body .hp__deck-container::-webkit-scrollbar-thumb:hover {
+    /* background: var(--color-blue); */
+  }
+  body .hp__card-item {
+    list-style: none; /* Ensures no bullet point on individual items */
+    transform: scale(0.9);
+  }
+  body .hp__card {
+    width: 6rem;
+    height: 8.4rem;
+    padding: 0.4rem;
+  }
+
+  body .hp__card-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #394936;
+    margin-bottom: 0.5rem;
+  }
+
+  body .hp__card-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a6c6e9;
+  }
+
+  body .hp__card-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-height: 850px) {
+  body .hp__card {
+    height: 10rem;
+  }
+
+  body .hp__deck-container {
+    padding: 4px;
+    padding-bottom: 0px;
+    gap: 0;
+    margin-top: 0;
+
+    overflow-y: auto;
+    display: grid;
+    max-height: 18rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body .hp__card-list {
+    gap: 0;
+  }
+}

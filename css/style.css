@@ -1,3 +1,5 @@
+@import url("/css/queries.css");
+
 :root {
   --color-yellow: #f7d02c;
   --color-blue: #3b4cca;
@@ -108,69 +110,22 @@ label {
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 800px) {
-  .title-screen {
-    transform: translateY(
-      0
-    ); /* Reset the Y-translation to bring the element into view */
-    padding: 1rem; /* Add padding for better spacing */
-    height: auto; /* Ensure height can adjust to content */
-    overflow-y: auto; /* Allow vertical scrolling if content exceeds viewport */
-    margin-bottom: 1rem;
-  }
-
-  .title-screen__heading {
-    max-width: 90%; /* Control the maximum width to avoid edges */
-    margin: 1rem auto; /* Center the heading */
-    font-size: 1.4rem; /* Responsive font size */
-    padding: 0.5rem; /* Add padding for breathing room */
-    text-align: center; /* Center the text */
-  }
-
-  .secondary-text {
-    font-size: 1rem; /* Ensure secondary text remains legible */
-  }
-
-  .pokeball {
-    max-width: 30px;
-    margin-bottom: 0.2rem;
-  }
-
-  .logo {
-    display: none;
-    height: 100px;
-    max-width: 200px; /* Ensure logo size is appropriate */
-  }
-  .title-screen .title-screen__btn-start {
-    margin-top: 20px;
-    padding: 0.4rem 1rem;
-    background-color: var(--color-blue-lighter); /* Pokémon blue */
-    color: white;
-    font-size: 0.8rem;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0px 3px 0px #ffcb05;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-}
-
 /* Deck */
 
 .hp__deck-container {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  justify-items: flex-start;
   align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
   overflow-x: scroll;
-  padding: 0.5rem;
-  gap: 1rem;
+  padding: 0rem;
+  gap: 0rem;
   background-color: #f0f4f7;
   border-radius: 0.6rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  padding: 20px; /* Add padding if necessary */
+  padding: 10px;
   max-width: 800px;
-  margin-top: 2rem;
-  transform: translateY(-200px);
 }
 
 .hp__deck-container::-webkit-scrollbar {
@@ -334,10 +289,16 @@ label {
 
 /* Card */
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hp__card-container {
   overflow-x: scroll;
   padding: 1rem;
-  gap: 1.5rem;
+  gap: 1rem;
   background-color: #f0f4f7;
   border-radius: 0.8rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -347,6 +308,48 @@ label {
 }
 .hp__card-container::-webkit-scrollbar {
   display: none;
+}
+
+.cards-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  text-shadow: 4px 4px 0px var(--color-blue);
+  font-family: var(--text-arcade), sans-serif;
+  margin-bottom: 3rem;
+}
+
+.cards-subheading {
+  opacity: 0; /* Start invisible */
+  transform: translateX(-50px); /* Start off-screen to the left */
+  animation: slideInOut 1.5s ease-in-out infinite;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  text-shadow: 4px 4px 0px var(--color-blue);
+  font-family: var(--text-arcade), sans-serif;
+}
+
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px); /* Slide out to the right */
+  }
 }
 
 .hp__card-list {
@@ -370,12 +373,13 @@ label {
   align-items: center;
   background-color: white;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.8rem;
   width: 9rem;
   height: 12rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   text-align: center;
+  transform: scale(0.9);
 }
 
 .hp__card:hover {
@@ -399,87 +403,6 @@ label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #a6c6e9;
-}
-
-@media (max-width: 800px) {
-  .hp__card-container {
-    margin-top: 1rem; /* Reduced margin */
-    overflow-y: auto; /* Allow vertical scrolling */
-    max-height: 80vh; /* Control height */
-    transform: scale(0.9);
-    padding: 0.2rem;
-  }
-
-  .hp__card-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-    gap: 10px;
-  }
-
-  .hp__deck-container {
-    margin-top: 0;
-    max-width: 200px;
-    overflow-x: auto; /* Allow vertical scrolling */
-    max-height: 80vh; /* Control height */
-    display: flex;
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* column-gap: 1rem; */
-    gap: 4px;
-    transform: scale(0.9);
-    padding: 0.2rem;
-  }
-
-  .hp__deck-container::-webkit-scrollbar {
-    display: flex;
-  }
-
-  .hp__deck-container::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  .hp__deck-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px; /* Round the track corners */
-  }
-
-  .hp__deck-container::-webkit-scrollbar-thumb {
-    /* background: var(--color-yellow);  */
-    border-radius: 10px;
-    border: 2px solid rgba(171, 171, 171, 0.2);
-  }
-
-  .hp__deck-container::-webkit-scrollbar-thumb:hover {
-    /* background: var(--color-blue); */
-  }
-  .hp__card-item {
-    list-style: none; /* Ensures no bullet point on individual items */
-    transform: scale(0.9);
-  }
-  .hp__card {
-    width: 6rem;
-    height: 8.4rem;
-    padding: 0.4rem;
-  }
-
-  .hp__card-title {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #394936;
-    margin-bottom: 0.5rem;
-  }
-
-  .hp__card-type {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #a6c6e9;
-  }
-
-  .hp__card-image {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 0;
-  }
 }
 
 /* Copyright */
@@ -540,5 +463,5 @@ label {
 
 /* Bottom */
 .hidden {
-  display: none;
+  display: none !important;
 }
